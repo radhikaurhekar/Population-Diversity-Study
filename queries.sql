@@ -27,5 +27,34 @@ GROUP BY l.language
 ORDER BY Most_spoken DESC
 LIMIT 10
 ;
+-- =============================================================================
+ -- 3 Population 
+ --    Which are the most populated cities in the world?
+  
+SELECT City,Max(Population) AS Most_Populated
+FROM city AS c
+GROUP BY City
+ORDER BY Most_Populated DESC
+LIMIT 10
+;
 
--- 
+-- -- =============================================================================
+ -- 4 Density
+ --    Which are the most populated countries in the world?
+SELECT 
+    country,
+    SUM(population) / SUM(surfacearea) AS density
+FROM country
+GROUP BY country
+ORDER BY density DESC
+LIMIT 10;
+  --    Which are the least populated countries in the world?
+  SELECT 
+    country,
+    SUM(population) / SUM(surfacearea) AS density
+FROM country
+GROUP BY country
+ORDER BY density ASC
+LIMIT 10;
+
+
