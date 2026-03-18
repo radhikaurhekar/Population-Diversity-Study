@@ -1,5 +1,4 @@
 CREATE SCHEMA Population_Diversity;
-
 USE Population_Diversity;
 
 CREATE TABLE Country (
@@ -10,6 +9,7 @@ CREATE TABLE Country (
     SurfaceArea DECIMAL(10,2),
     Population INT,
     LifeExpectancy DECIMAL(4,1),
+    GNP DECIMAL(10,1),
     PRIMARY KEY (CountryCode)
 );
 
